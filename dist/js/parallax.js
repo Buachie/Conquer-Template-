@@ -8,5 +8,5 @@ $(window).scroll(function () {
         $("#header").css("background - position - y", -(scrollTop * 0.5) + "px");
     }
     */
-    $("#header, #services").css("background-position-y", -(scrollTop * 0.5) + "px");
+    $("#header, #services, #contact").css("background-position-y", -(scrollTop * 0.5) + "px");
 })
