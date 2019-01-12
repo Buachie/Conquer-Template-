@@ -22,7 +22,8 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   position: sticky;
-  top: 0; }
+  top: 0;
+  z-index: 2; }
   nav ul {
     margin: 0;
     padding: 1rem 0; }
@@ -41,6 +42,8 @@ nav {
   overflow: hidden;
   height: 50vh;
   color: #fff; }
+  .parallax:first-child {
+    height: 60vh; }
 
 #header {
   width: 100%;
@@ -52,26 +55,27 @@ nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  z-index: -1; }
   #header .title {
     text-align: center;
+    position: relative;
+    bottom: 0;
     color: #fff; }
     #header .title h1 {
       margin-top: 0; }
-    #header .title::after {
-      content: '';
-      filter: blur(20px); }
 
 #tab-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 80%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  width: 70%;
   margin: 3rem auto;
   grid-gap: 3rem; }
   #tab-3 .item {
     background-color: #f2f2f2; }
     #tab-3 .item img {
-      max-width: 100%; }
+      width: 100%; }
     #tab-3 .item .text {
       padding: 0 1rem; }
   #tab-3 .green {
@@ -86,21 +90,23 @@ nav {
     color: #fff; }
 
 #tab-2 {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: grid;
   grid-gap: 3rem;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-auto-rows: 1fr; }
+  #tab-2 .text {
+    padding: 1rem; }
   #tab-2 img {
-    max-width: 100%; }
+    width: 100%; }
   #tab-2 .item {
     background-color: #f2f2f2; }
 
 #services {
   margin-top: 3rem;
   width: 100%;
-  height: 150%;
+  height: 350%;
   background-image: url(../img/banner2.jpg);
   display: flex;
   align-items: center;
@@ -108,14 +114,53 @@ nav {
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top; }
+  background-position: center top;
+  text-align: center; }
+  #services .title {
+    text-align: center;
+    position: relative;
+    top: 0; }
 
 .col4 {
-  width: 80%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 3rem auto;
   display: grid;
-  grid-auto-rows: 1fr;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-areas: "col1 col2 col3 col4" "big-col big-col big-col big-col";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, min-content);
   grid-gap: 3rem; }
+  .col4 .text {
+    padding: 1rem; }
+    .col4 .text h1 {
+      text-align: center; }
+  .col4 .col-item1 {
+    grid-area: col1;
+    background-color: #f2f2f2; }
+  .col4 .col-item2 {
+    grid-area: col2;
+    background-color: #f2f2f2; }
+  .col4 .col-item3 {
+    grid-area: col3;
+    background-color: #f2f2f2; }
+  .col4 .col-item4 {
+    grid-area: col4;
+    background-color: #f2f2f2; }
+  .col4 .big-col {
+    grid-area: big-col;
+    background-color: #f2f2f2; }
   .col4 img {
-    max-width: 100%; }
+    width: 100%; }
+
+#contact {
+  background-image: url(../img/banner3.jpg);
+  margin-top: 3rem;
+  width: 100%;
+  height: 350%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  text-align: center; }
