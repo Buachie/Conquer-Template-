@@ -1,0 +1,16 @@
+//Parallax Effect
+
+@mixin parallax {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+//Center Items Vertically and Horizontally with Flexbox
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
